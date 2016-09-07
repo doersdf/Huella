@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>huella</title>
+		<meta content="width=device-width, initial-scale=1" name="viewport">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+	</head>
+	<body>
+		<div id="main" class="screen">
+			<table class="container">
+			  	<tr>
+			     	<td class="content">
+			         	<div class="date">Jueves 8 de Octubre</div>
+			         	<div class="time">09:00</div>
+			     	</td>
+			  	</tr>
+			</table>
+		</div>
+
+		<div id="riseUp" class="screen hidden">
+			<table class="container">
+			  	<tr>
+			     	<td class="content">
+			         	<img src="img/logo.png"/>
+			     	</td>
+			  	</tr>
+			</table>
+		</div>
+
+		<div id="fingerprint" class="screen hidden">
+			<table class="container">
+			  	<tr>
+			     	<td class="content">
+			     		<p>Introduce tu huella</p>
+			     		<img class="reading" src="img/reading.gif"/>
+			     		<br/>
+			     		<img src="img/down-arrow.png"/>
+			     	</td>
+			    </tr>
+			</table>
+		</div>
+
+		<div id="code" class="screen hidden">
+			<table class="container">
+			  	<tr>
+			     	<td class="content">
+			     		<form id="codeForm">
+				     		<input type="text" class="code" readonly/>
+				     		<ul class="numberkeys">
+				     			<li class="left"><button type="button" class="key number" value="1">1</button></li>
+				     			<li class="center"><button type="button" class="key number" value="2">2</button></li>
+				     			<li class="right"><button type="button" class="key number" value="3">3</button></li>
+				     			<li class="left"><button type="button" class="key number" value="4">4</button></li>
+				     			<li class="center"><button type="button" class="key number" value="5">5</button></li>
+				     			<li class="right"><button type="button" class="key number" value="6">6</button></li>
+				     			<li class="left"><button type="button" class="key number" value="7">7</button></li>
+				     			<li class="center"><button type="button" class="key number" value="8">8</button></li>
+				     			<li class="right"><button type="button" class="key number" value="9">9</button></li>
+				     			<li class="left"><button type="reset" class="key delete"><i class="fa fa-arrow-left"></i></button></li>
+				     			<li class="center"><button type="button" class="key number" value="0">0</button></li>
+				     			<li class="right"><button type="submit" class="key submit"><i class="fa fa-check"></i></button></li>
+				     		</ul> 
+				     	</form>
+			     	</td>
+			    </tr>
+			</table>
+		</div>
+
+		<div id="in" class="screen hidden">
+			<table class="container">
+			  	<tr>
+			     	<td class="content">
+			     		<i class="fa fa-user fa-4x"></i>
+			     		<h2>Hola {{username}}</h2>
+			     		<p>Registrando entrada:</p>
+			     		<span>09:00</span>
+			     		<div class="bottom-bar">
+							<p>Ayer hiciste: <b>8 horas, 15 minutos</b></p>
+							<button type="button" id="showStats">Ver historial</button>
+						</div>
+			     	</td>
+			    </tr>
+			</table>
+		</div>
+
+		<div id="out" class="screen hidden">
+			<table class="container">
+			  	<tr>
+			     	<td class="content">
+			     		<i class="fa fa-user fa-4x"></i>
+			     		<h2>Adiós {{username}}</h2>
+			     		<p>Registrando salida:</p>
+			     		<span>19:00</span>
+			     		<div class="bottom-bar">
+							<p>Hoy has hecho: <b>8 horas, 15 minutos</b></p>
+							<button type="button" id="showStats">Ver historial</button>
+						</div>
+			     	</td>
+			    </tr>
+			</table>
+		</div>
+
+		<div id="error" class="screen hidden">
+			<table class="container">
+			  	<tr>
+			     	<td class="content">
+			     		<i class="fa fa-times-circle fa-5x"></i>
+			     		<h2>ERROR FATAL, INICIANDO PROCESO DE AUTODESTRUCCIÓN</h2>
+			     		<p>¡Rápido, te quedan 3 intentos y 1 minuto evitar el apocalipsis!</p>
+			     		<button type="button" id="backToIndex">Volver</button>
+			     	</td>
+			    </tr>
+			</table>
+		</div>
+
+		<div id="stats" class="screen hidden">
+			<table class="container">
+			  	<tr>
+			     	<td class="content">
+			     		<h2>Historial de {{username}}</h2>
+			     		<i class="fa fa-times fa-2x" id="closeStats"></i>
+			     		<div class="stats-boxes">
+		     				<button class="box red" type="button" readonly>
+			     				<h4>Último día registrado</h4>
+			     				<p>8 horas y 15 minutos</p>
+		     				</button>
+			     			<button class="box yellow" type="button" readonly>
+			     				<h4>Semana en curso</h4>
+			     				<p>30/40 horas</p>
+			     			</button>
+			     			<button class="box green" type="button" readonly>
+			     				<h4>Mes en curso</h4>
+			     				<p>100/120 horas</p>
+			     			</button>
+			     			<button class="box blue" type="button" readonly>
+			     				<h4>Año en curso</h4>
+			     				<p>500/1800 horas</p>
+			     			</button>
+			     		</div>
+			     	</td>
+			    </tr>
+			</table>
+		</div>
+
+		<div id="newuser" class="screen hidden">
+			<table class="container">
+			  	<tr>
+			     	<td class="content">
+			     		<h2>Alta usuario</h2>
+			     		<form>
+			     			<ul class="input-group">
+			     				<li><input type="text" name="name" placeholder="Nombre"/></li>
+			     				<li><input type="text" name="code" placeholder="Código"/></li>
+			     				<li><input type="text" name="hours" placeholder="Horas semanales"/></li>
+			     				<li class="button"><button type="button">Capturar huella</button></li>
+			     				<li class="button cancel"><button type="reset" class="cancel">Cancelar</button></li>
+			     				<li class="button submit"><button type="submit" class="submit">Guardar</button></li>
+			     			</ul>
+			     		</form>
+			     	</td>
+			    </tr>
+			</table>
+		</div>
+		
+		<script src="js/main.js"></script>
+
+	</body>
+</html>

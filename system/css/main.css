@@ -1,0 +1,353 @@
+@font-face{
+	font-family: Roboto Light;
+	src: url(fonts/Roboto-light.ttf) format('truetype')
+}
+
+@font-face{
+	font-family: Roboto;
+	src: url(fonts/Roboto.ttf) format('truetype')
+}
+
+@font-face{
+	font-family: Roboto Medium;
+	src: url(fonts/Roboto-Medium.ttf) format('truetype')
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background: white;
+	font-family: 'Roboto', sans-serif;
+	color: black;
+	font-size: 18px;
+}
+
+h2 {font-size: 20px;}
+p {font-size: 16px;}
+
+.hidden {
+	display: none !important;
+	z-index: 0 !important;
+}
+
+.screen {
+	position: absolute;
+	display: table;
+	top: 0; left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+}
+
+.screen .container {
+	width: 100%; 
+	height: 100%;
+}
+
+.screen .container .content {
+	text-align: center; 
+	vertical-align: middle;
+}
+
+
+#main {
+	background: url('../img/bg.jpg') no-repeat;
+	background-size: cover;
+  	color: white;
+  	text-transform: uppercase;
+}
+
+#main .time {font-size: 83px}
+
+#riseUp img{
+	display: inline-block;
+	vertical-align: top;
+	width: 70%;
+	max-width: 500px;
+	height: auto;
+}
+
+#fingerprint img {
+	display: inline-block;
+	margin: 10px 0;
+}
+
+#fingerprint img.reading {margin: 30px auto 10px;}
+
+#code input {
+	width: 60%;
+	height: 50px;
+	margin: 4px 0;
+	border: 1px solid #ccc;
+	border-bottom: 2px solid #ccc;
+	border-radius: 3px;
+	font-family: 'Roboto', sans-serif;
+	outline: none;
+	text-align: center;
+	font-size: 40px;
+	line-height: 60px;
+	font-weight: 500;
+}
+
+#code ul {
+	width: 60%;
+	display: inline-block;
+	list-style: none;
+	text-align: center;
+}
+#code ul li {
+	width: 31.33%;
+	float: left;
+}
+
+#code ul li.left {float: left;}
+#code ul li.center {margin-left: 3%;}
+#code ul li.right {float: right;}
+
+#code ul li button.key {
+	display: inline-block;
+	width: 100%;
+	height: 50px;
+	background: #e9eaeb;
+	border: 1px solid #ccc;
+	text-align: center;
+	line-height: 50px;
+	margin: 4px 0;
+	font-family: 'Roboto', sans-serif;
+	border-radius: 3px;
+	outline: none;
+	line-height: 50px;
+	font-size: 18px;
+}
+
+#code ul li button.key:active {
+	background: #565757;
+	border-color: #565757;
+	color: #fff;
+}
+
+#code ul li button.submit:active {
+	background: #31b15b;
+	border-color: #31b15b;
+}
+
+#code ul li button.delete:active {
+	background: #fe4435;
+	border-color: #fe4435;
+}
+
+#error {
+	background: #fe4435;
+	color: #fff;
+}
+
+#error .content * {
+	margin: 10px 0;
+}
+
+#error button {
+	display: inline-block;
+	width: auto;
+	height: 50px;
+	line-height: 50px;
+	background: #fff;
+	color: #fe4435;
+	text-align: center;
+	padding: 0 20px;
+	font-family: 'Roboto-Medium', sans-serif;
+	border-radius: 3px;
+	border: none;
+	outline: none;
+	font-size: 18px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#in .content,
+#out .content {
+	height: 270px;
+	position: relative;
+	vertical-align: top;
+	padding-top: 30px;
+	overflow: hidden;
+}
+
+#in .content i.fa,
+#out .content i.fa {
+	background: #eaebea;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    overflow: hidden;
+    line-height: 90px;
+    color: #666;
+   	margin-bottom: 10px;
+}
+
+#in .content p,
+#out .content p {
+	margin: 10px 0;
+	color: #666;
+	font-weight: bold;
+}
+#in .content span,
+#out .content span {
+	font-size: 50px;
+	color: #31b15b;
+	font-weight: bold;
+}
+
+#in .content div.bottom-bar,
+#out .content div.bottom-bar {
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 90%;
+    padding: 0 5%;
+    height: 60px;
+    line-height: 60px;
+    text-align: left;
+    background: #eaebea;
+}
+
+#in .content div.bottom-bar p,
+#out .content div.bottom-bar p {
+	float: left;
+	margin: 0;
+	font-weight: normal;
+	color: black;
+}
+#in .content div.bottom-bar button,
+#out .content div.bottom-bar button {
+	float: right;
+    width: auto;
+    height: 40px;
+    margin: 10px 0;
+    border: 1px solid #c0c1c1;
+    background: transparent;
+    padding: 0 15px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: 'Roboto';
+    font-weight: bold;
+    border-radius: 5px;
+    color: #666;
+    outline: none;
+}
+
+#stats .content h2 {
+	position: absolute;
+    top: 33px;
+    left: 5%;
+}
+
+#stats .content i {
+	position: absolute;
+    top: 25px;
+    right: 5%;
+}
+
+#stats .content div.stats-boxes {
+	display: inline-block;
+    vertical-align: top;
+    width: 90%;
+    height: 60%;
+    margin-top: 20%;
+    position: relative;
+}
+
+#stats .content div.stats-boxes button.box {
+	float: left;
+	display: inline-block;
+	width: 50%;
+    height: 50%;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+#stats .content div.stats-boxes button.box.red {
+	border-top-left-radius: 4px;
+	background: #fde1e1;
+	border-right: none;
+}
+
+#stats .content div.stats-boxes button.box.yellow {
+	border-top-right-radius: 4px;
+	background: #fbfbdb;
+}
+
+#stats .content div.stats-boxes button.box.green {
+	border-bottom-left-radius: 4px;
+	background: #d2efd7;
+	border-right: none;
+	border-top: none;
+}
+
+#stats .content div.stats-boxes button.box.blue {
+	border-bottom-right-radius: 4px;
+	background: #d2e2ef;
+	border-top: none;
+}
+
+#newuser h2 {margin-bottom: 20px;}
+
+#newuser ul.input-group {
+	display: inline-block;
+	vertical-align: top;
+	width: 90%;
+	height: auto;
+	list-style: none;
+}
+
+#newuser ul.input-group li {
+	float: left;
+	width: 46%;
+	margin: 5px 1%;
+	border: 1px solid #ddd;
+}
+
+#newuser ul.input-group li.button {border-radius: 5px;}
+#newuser ul.input-group li.button.cancel {border-color: #fe4435;}
+#newuser ul.input-group li.button.submit {border-color: #31b15b;}
+
+#newuser ul.input-group li input,
+#newuser ul.input-group li button {
+	float: left;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	outline: none;
+	border: none;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+}
+
+#newuser ul.input-group li input {
+	padding: 0 5%;
+    width: 90%;
+}
+
+#newuser ul.input-group li button {
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #555;
+	background: #ddd;
+}
+
+#newuser ul.input-group li button.submit,
+#newuser ul.input-group li button.cancel {color: white;}
+
+#newuser ul.input-group li button.submit {background: #31b15b;}
+#newuser ul.input-group li button.cancel {background: #fe4435;}
